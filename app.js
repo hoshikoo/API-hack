@@ -2,8 +2,6 @@ $(document).ready(function(){
 
 	var getResult = function(artistNameTag){
 
-		// var artistNameTag = "jimi+henrdix";	
-
 			$.getJSON("http://developer.echonest.com/api/v4/artist/search?api_key=HDRBCYY9TLSIFUMSR&format=json&name="+artistNameTag+"&results=1", function(data) { 
 			var responseData = data.response
 			$(".artist-name").text(responseData["artists"][0]["name"]);
@@ -85,13 +83,12 @@ $(document).ready(function(){
 					getResult(artistNameTag);
 				});
 			});
-			
-
 		};
 
-
-// alert(artistNameTag);
-// getResult;
+var artistNameTag = "jimi+henrdix";	
+alert(artistNameTag);
+getResult(artistNameTag);
+	
 
 	$('.artistSubmit').submit( function(event){
 		// get the value of the tags the user submitted
@@ -107,6 +104,7 @@ $(document).ready(function(){
 		alert(artistNameTag);
 		getResult(artistNameTag);
 	});
+
 
 });
 
