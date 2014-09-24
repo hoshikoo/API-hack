@@ -2,11 +2,13 @@ $(document).ready(function(){
 
 	$('.artistSubmit').submit( function(event){
 		// get the value of the tags the user submitted
+
 		var artistName = $(this).find("input[name='artistName']").val();
 		$(".artist-name").html('');
 		event.preventDefault();
 		var artistNameTag = artistName.toLowerCase().split(' ').join('+');
 		getResult(artistNameTag);
+		document.getElementById("inputform").value = "";
 	});
 
 	getResult("marvin+gaye");
@@ -220,12 +222,17 @@ var getResult = function(artistNameTag){
 				$.getJSON(echonestApi+"images"+echonestkey+"id="+similarid+"&format=json&results=1&start=0&license=unknown").done(function(data) { 
 					var responseData = data.response;
 					console.log(responseData["images"][0]);
-					$( ".simipics").each(function() {										
-						if(responseData.images[0]=== undefined){
+					var j = 0;
+					$( ".simipics").each(function() {
+						if(i==j){
+							if(responseData.images[0]=== undefined){
 				        	$(".simipics").attr("src", "images/photo_not_available_big.jpg");
 				    	}else{
 				    		$(".simipics").attr("src", responseData["images"][0]["url"]);
 				    	};		    	
+						}
+						j++;										
+						
 					});
 				});
 			});
