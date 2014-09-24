@@ -223,21 +223,16 @@ var getResult = function(artistNameTag){
 		for (var i = 0; i<5; i++){
 			var similarid = responseData["artists"][i]["id"];
 			$.getJSON(echonestApi+"images"+echonestkey+"id="+similarid+"&format=json&results=1&start=0&license=unknown").done(function(data) { 
-					var responseData = data.response;
-					console.log(responseData["images"][0]);
-					var j = 0;
-					$( ".simipics").each(function() {
-						if(i==j){
-							if(responseData.images[0]=== undefined){
-				        	$(".simipics").attr("src", "images/photo_not_available_big.jpg");
-				    	}else{
-				    		$(".simipics").attr("src", responseData["images"][0]["url"]);
-				    	};		    	
-						}
-						j++;										
-						
-					});
-				});
+				var responseData = data.response;
+
+				console.log(responseData["images"][0]);			
+					
+				if(responseData.images[0]=== undefined){
+				    $(".simipics"+i).attr("src", "images/photo_not_available_big.jpg");
+				}else{
+				    $(".simipics"+i).attr("src", responseData["images"][0]["url"]);
+				};		    	
+			});
 		};
 			
 
