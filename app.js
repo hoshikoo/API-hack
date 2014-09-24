@@ -217,9 +217,12 @@ var getResult = function(artistNameTag){
 		for (var i = 0; i<5; i++){
 			$(".simiNames").each(function(i){
 				$(this).text(responseData["artists"][i]["name"]); 
-				var similarid = responseData["artists"][i]["id"];
+			});
+		};
 
-				$.getJSON(echonestApi+"images"+echonestkey+"id="+similarid+"&format=json&results=1&start=0&license=unknown").done(function(data) { 
+		for (var i = 0; i<5; i++){
+			var similarid = responseData["artists"][i]["id"];
+			$.getJSON(echonestApi+"images"+echonestkey+"id="+similarid+"&format=json&results=1&start=0&license=unknown").done(function(data) { 
 					var responseData = data.response;
 					console.log(responseData["images"][0]);
 					var j = 0;
@@ -235,9 +238,9 @@ var getResult = function(artistNameTag){
 						
 					});
 				});
-			});
-			
 		};
+			
+
 	});
 
 };
