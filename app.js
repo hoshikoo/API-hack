@@ -240,6 +240,7 @@ var getResult = function(artistNameTag){
 					});	    	
 				});
 			};
+			getResults(i, similarid);
 		};	
 	});
 
