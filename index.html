@@ -2,63 +2,158 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+
 	<title>Document</title>
+	
 	<link rel="stylesheet" href="main.css">
-	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="app.js"></script>
+	<link rel="stylesheet" href="flexslider.css" type="text/css">
+	<script src="jquery.flexslider.js"></script>
+	<script src="jquery.highlight-4.js"></script>
 
 </head>
+
+
 <body>
-<div>Please submit your favorite artist
+<div class="top">Get the information about your favorite artist
 	<form class="artistSubmit" onsubmit="return false;">
-				<input id="inputform" type="text" placeholder="e.g., Radiohead" name="artistName" size="30"  required>
-				<input type="submit" value="Submit">
+				<input id="inputform" type="text" placeholder="e.g., Radiohead" name="artistName" size="30" required >
+				<input id="submit" type="submit" value="Get Info">
 	</form>
 </div>
 
 <div class="firstrow">
-	<div class="pictures">
-		<img class="pics"/>
+	<div class="pictures flexslider">
+		  <ul class="slides">
+		    <li class="slide" data-thumb=>
+		      <img class="pics" src=""/>
+		    </li>
+		    <li class="slide" data-thumb=>
+		      <img class="pics" src=""/>
+		    </li>
+		    <li class="slide" data-thumb=>
+		      <img class="pics" src=""/>
+		    </li>
+		    <li class="slide" data-thumb=>
+		      <img class="pics" src=""/>
+		    </li>
+		    <li class="slide" data-thumb=>
+		      <img class="pics" src=""/>
+		    </li>
+		  </ul>
 	</div>
-	<div class="artist-name">Jimi Hendrix</div>
+	<div class="artist-name"></div>
 </div>
 
-<!-- <div class="leftBottom">
-	<div class="genre"></div>
-	<div class="officialsite">
-		<a href="" target="_blank"></a>
+
+<div class="secondrow">
+	<div class="leftBottom">
+		<div class="genre"></div>
+		<div class="officialsite">
+			<a href="" target="_blank"></a>
+		</div>
+
+
+
+		<div class="top5ongs"> Top 5 Songs
+
+				<!-- <div class="audio-player player1">
+				    <h1 class="songtitle title1"></h1>
+				    <img class="cover cover1" alt="">
+				    <audio id="audio-player1" class="player" type="audio/mp3" controls="controls"></audio>
+			    </div>
+			    <div class="spotfylink1">
+					<a target="_blank"><img class="spotifylogo" src="images/listen-black.png"/></a>
+				</div>
+
+				<div class="audio-player player2">
+				    <h1 class="songtitle title2"></h1>
+				    <img class="cover cover2" alt="">
+				    <audio id="audio-player2" class="player" type="audio/mp3" controls="controls"></audio>
+			    </div>
+			    <div class="spotfylink2">
+					<a target="_blank"><img class="spotifylogo" src="images/listen-black.png"/></a>
+				</div>
+
+			    <div class="audio-player player3">
+				    <h1 class="songtitle title3"></h1>
+				    <img class="cover cover3" alt="">
+				    <audio id="audio-player3" class="player" type="audio/mp3" controls="controls"></audio>
+			    </div>
+			    <div class="spotfylink3">
+					<a target="_blank"><img class="spotifylogo" src="images/listen-black.png"/></a>
+				</div>
+
+			    <div class="audio-player player4">
+				    <h1 class="songtitle title4"></h1>
+				    <img class="cover cover4" alt="">
+				    <audio id="audio-player4" class="player" type="audio/mp3" controls="controls"></audio>
+			    </div>
+			    <div class="spotfylink4">
+					<a target="_blank"><img class="spotifylogo" src="images/listen-black.png"/></a>
+				</div>
+
+			    <div class="audio-player player5">
+				    <h1 class="songtitle title5"></h1>
+				    <img class="cover cover5" alt="">
+				    <audio id="audio-player5" class="player" type="audio/mp3" controls="controls"></audio>
+			    </div>
+			    <div class="spotfylink5">
+					<a target="_blank"><img class="spotifylogo" src="images/listen-black.png"/></a>
+				</div> -->
+			    
+		</div>
+		
+<!-- Music Player -->
+
+		<div class="whosampled">
+			Click below logo to check who sampled this artist works<br>
+			<a class = "whosampleda" href="" target="_blank">
+				<img class ="whosampled_logo" src="images/whosampled_logo.png"/>
+			</a>
+		</div>
+		
+	</div>	
+
+
+	<div class="rightBottom">
+		<div class="bio"></div>
+
+		<div class="similarArtists"> 
+			<p class="simititle">Similar Artists<br></p>
+			<div class="simi flexslider">
+				<ul class="slides similarArtistsul">
+				    <li>
+						<div class="similarArtistspic"><p class="simiNames"></p><img class="simipics"/></div>
+					</li>
+					<li>
+						<div class="similarArtistspic"><p class="simiNames"></p><img class="simipics"/></div>
+					</li>
+					<li>	
+						<div class="similarArtistspic"><p class="simiNames"></p><img class="simipics"/></div>
+					</li>
+					<li>
+						<div class="similarArtistspic"><p class="simiNames"></p><img class="simipics"/></div>
+					</li>
+					<li>	
+						<div class="similarArtistspic"><p class="simiNames"></p><img class="simipics"/></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="newsContainer">
+			<div class="news title"></div>
+			<div class="news summary"></div>
+			<div class="news url"><a href="" target="_blank"></a></div>
+		</div>
+
 	</div>
-	<div class="similarArtists"></div>
-</div> -->
 
-<div class="leftBottom">
-	<div class="genre"></div>
-	<div class="officialsite">
-		<a href="" target="_blank"></a>
-	</div>
-	<div class="newsContainer">
-		<div class="news title"></div>
-		<div class="news summary"></div>
-		<div class="news url"></div>
-	</div>
 </div>
 
-<div class="rightBottom">
-	<div class="bio"></div>
-	
-</div>
-<div class="midfooter"></div>
-<div class="similarArtists"> Similar Artists
-	<div class="similarArtistspic"><p class="simiName"></p><img class="simipics"/></div>
-</div>
-	
 
-
-
-
-<div class="templates hidden">
-	<div class="result"></div>
-</div>
-
+<footer><a href="http://the.echonest.com/" target="_blank"><img class="logo" src="images/logo2.png"/ ></a></footer>
 </body>
 </html>
