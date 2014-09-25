@@ -6,20 +6,26 @@
 	<title>Document</title>
 
 	<link rel="stylesheet" href="main.css">
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<!-- include the jquery ui library -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+
 	<script src="app.js"></script>
 	<link rel="stylesheet" href="flexslider.css" type="text/css">
 	<script src="jquery.flexslider.js"></script>
-	<script src="jquery.highlight-4.js"></script>
-
+	<script src="js/to-title-case.js"></script>
+	<script src="js/jquery.highlight-4.js"></script>
+     
+    
 </head>
 
 
 <body>
 <div class="top">Get the information about your favorite artist
 	<form class="artistSubmit" onsubmit="return false;">
-				<input id="inputform" type="text" placeholder="e.g., Radiohead" name="artistName" size="30" required >
-				<input id="submit" type="submit" value="Get Info">
+		<input id="inputform" type="text" placeholder="e.g., Radiohead" name="artistName" size="30" required >
+		<input id="submit" type="submit" value="Get Info">
 	</form>
 </div>
 
@@ -55,60 +61,13 @@
 		</div>
 
 
-
-		<div class="top5ongs"> Top 5 Songs
-
-				<!-- <div class="audio-player player1">
-				    <h1 class="songtitle title1"></h1>
-				    <img class="cover cover1" alt="">
-				    <audio id="audio-player1" class="player" type="audio/mp3" controls="controls"></audio>
-			    </div>
-			    <div class="spotfylink1">
-					<a target="_blank"><img class="spotifylogo" src="images/listen-black.png"/></a>
-				</div>
-
-				<div class="audio-player player2">
-				    <h1 class="songtitle title2"></h1>
-				    <img class="cover cover2" alt="">
-				    <audio id="audio-player2" class="player" type="audio/mp3" controls="controls"></audio>
-			    </div>
-			    <div class="spotfylink2">
-					<a target="_blank"><img class="spotifylogo" src="images/listen-black.png"/></a>
-				</div>
-
-			    <div class="audio-player player3">
-				    <h1 class="songtitle title3"></h1>
-				    <img class="cover cover3" alt="">
-				    <audio id="audio-player3" class="player" type="audio/mp3" controls="controls"></audio>
-			    </div>
-			    <div class="spotfylink3">
-					<a target="_blank"><img class="spotifylogo" src="images/listen-black.png"/></a>
-				</div>
-
-			    <div class="audio-player player4">
-				    <h1 class="songtitle title4"></h1>
-				    <img class="cover cover4" alt="">
-				    <audio id="audio-player4" class="player" type="audio/mp3" controls="controls"></audio>
-			    </div>
-			    <div class="spotfylink4">
-					<a target="_blank"><img class="spotifylogo" src="images/listen-black.png"/></a>
-				</div>
-
-			    <div class="audio-player player5">
-				    <h1 class="songtitle title5"></h1>
-				    <img class="cover cover5" alt="">
-				    <audio id="audio-player5" class="player" type="audio/mp3" controls="controls"></audio>
-			    </div>
-			    <div class="spotfylink5">
-					<a target="_blank"><img class="spotifylogo" src="images/listen-black.png"/></a>
-				</div> -->
-			    
-		</div>
-		
+<!-- Music Player -->
+		<div class="top5ongs"> Top 5 Songs	    
+		</div>		
 <!-- Music Player -->
 
 		<div class="whosampled">
-			Click below logo to check who sampled this artist works<br>
+			Click below logo to check who sampled this artist's works<br>
 			<a class = "whosampleda" href="" target="_blank">
 				<img class ="whosampled_logo" src="images/whosampled_logo.png"/>
 			</a>
@@ -122,22 +81,23 @@
 
 		<div class="similarArtists"> 
 			<p class="simititle">Similar Artists<br></p>
+			<p class="simimemo">Click on the picture to search the similar artist<br></p>
 			<div class="simi flexslider">
 				<ul class="slides similarArtistsul">
 				    <li>
-						<div class="similarArtistspic"><p class="simiNames"></p><img class="simipics"/></div>
+						<div class="similarArtistspic"><p class="simiNames"></p><img class="simipics simipics1"/></div>
 					</li>
 					<li>
-						<div class="similarArtistspic"><p class="simiNames"></p><img class="simipics/"></div>
+						<div class="similarArtistspic"><p class="simiNames"></p><img class="simipics simipics2"/></div>
 					</li>
 					<li>	
-						<div class="similarArtistspic"><p class="simiNames"></p><img class="simipics"/></div>
+						<div class="similarArtistspic"><p class="simiNames"></p><img class="simipics simipics3"/></div>
 					</li>
 					<li>
-						<div class="similarArtistspic"><p class="simiNames"></p><img class="simipics"/></div>
+						<div class="similarArtistspic"><p class="simiNames"></p><img class="simipics simipics4"/></div>
 					</li>
 					<li>	
-						<div class="similarArtistspic"><p class="simiNames"></p><img class="simipics"/></div>
+						<div class="similarArtistspic"><p class="simiNames"></p><img class="simipics simipics5"/></div>
 					</li>
 				</ul>
 			</div>
@@ -154,6 +114,19 @@
 </div>
 
 
-<footer><a href="http://the.echonest.com/" target="_blank"><img class="logo" src="images/logo2.png"/ ></a></footer>
+<footer>
+	<a href="http://the.echonest.com/" target="_blank">
+		<img class="logo" src="images/logo2.png"/ >
+	</a>
+</footer>
+
+<div id="basicModal">
+	"The artist name you input is not available in the system.  Please try again or try another artist."
+	<img id="alert" src="images/background2.jpg">
+ </div>
+
+<div class = "hidden">
+			<p class="error">Something went wrong with your request. Here's what we know:</p>
+</div>
 </body>
 </html>
